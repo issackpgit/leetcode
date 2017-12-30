@@ -23,7 +23,7 @@ class Solution35 {
             return binarySearch(nums, mid+1, r, x);
         }
         
-        return r++;   	
+        return l;   	
     }
     
 }
