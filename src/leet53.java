@@ -1,34 +1,45 @@
+//Author : Issac Koshy Panicker
+
 import java.io.*;
 
 class Solution53 {
     public int maxSubArray(int[] nums) {
      
-    	int max = 0;
-    int tempmax = 0;
-     int flag = 0;
-    	for(int i =0;i < nums.length; i++) {
+    	int max = nums[0];
+    int tempmax = nums[0];
+    
+// 	int max = 0; //Solution 2
+//  int tempmax = 0; //Solution 2
+//  int flag = 0; //Solution 2
+    
+    for(int i =1;i < nums.length; i++) {  // i should be 0 for solution 2
     		
-    		if(nums[i]>0) {
-    			flag = 1;
-    		}
+//    		if(nums[i]>0) { //Solution 2
+//    			flag = 1;//Solution 2
+//    		} //Solution 2
+    		
     		tempmax += nums[i];
-    		if(tempmax<0) 
-    			tempmax = 0;
+    		if(tempmax<nums[i]) 
+    			tempmax= nums[i];
+    		
+//    	if(tempmax<0)  //Solution 2
+//   		tempmax = 0; //Solution 2
+    		
     		if(max < tempmax)
     			max = tempmax ; 
     	}
     	
-    	if(flag == 0) {
-    		max = nums[0];
-            for(int i = 0; i < nums.length; i++)
-            {
-                if(max < nums[i])
-                {
-                    max = nums[i];
-                }
-            }
-    		
-    	}
+//    	if(flag == 0) {   //*Solution 2
+//    		max = nums[0];
+//            for(int i = 0; i < nums.length; i++)
+//            {
+//                if(max < nums[i])
+//                {
+//                    max = nums[i];
+//                }
+//            }
+//    		
+//    	} //*Solution 2
     	
     	return max;
     }
