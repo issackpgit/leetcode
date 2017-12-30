@@ -8,10 +8,8 @@ class Solution35 {
     	return n;
     }
     
-    public int binarySearch(int[] nums, int l, int r, int x) {
-
-    	
-    	//test;
+    public int binarySearch(int[] nums, int l, int r, int x) { 	
+   
         if (r>l)
         {
             int mid = l + (r - l)/2;          
