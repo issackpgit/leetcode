@@ -10,6 +10,8 @@ class Solution35 {
     
     public int binarySearch(int[] nums, int l, int r, int x) {
 
+    	
+    	//test;
         if (r>l)
         {
             int mid = l + (r - l)/2;          
