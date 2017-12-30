@@ -6,25 +6,32 @@ import java.io.*;
 class Solution35 {
     public int searchInsert(int[] nums, int target) {
     
-	int n = binarySearch(nums, 0 , nums.length, target);
-
-    	return n;
+    	int low = 0, high = nums.length-1;
+    	
+    	while(low<=high) {
+    		int mid = (low+high) / 2 ; 
+    		if(nums[mid] == target) return mid; 
+    		else if(nums[mid]<target) low = mid+1;
+    		else high = mid -1; 
+    	}
+    	
+    	return low;
     }
     
-    public int binarySearch(int[] nums, int l, int r, int x) { 	
-   
-        if (r>l)
-        {
-            int mid = l + (r - l)/2;          
-            if (nums[mid] == x)
-               return mid;
-            if (nums[mid] > x)
-               return binarySearch(nums, l, mid-1, x);
-            return binarySearch(nums, mid+1, r, x);
-        }
-        
-        return l;   	
-    }
+//    public int binarySearch(int[] nums, int l, int r, int x) { 	
+//   
+//        if (r>l)
+//        {
+//            int mid = l + (r - l)/2;          
+//            if (nums[mid] == x)
+//               return mid;
+//            if (nums[mid] > x)
+//               return binarySearch(nums, l, mid-1, x);
+//            return binarySearch(nums, mid+1, r, x);
+//        }
+//        
+//        return l;   	
+//    }
     
 }
 
