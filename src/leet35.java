@@ -1,4 +1,5 @@
-//Code developed By Issac Koshy Panicker
+//Author : Issac Koshy Panicker
+//Year : 2017
 
 import java.io.*;
 
