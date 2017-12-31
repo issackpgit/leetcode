@@ -19,6 +19,7 @@ class Solution67 {
     		b = new StringBuffer(temp).reverse().toString();
     		bl = al;
     	}
+    	
     	if(bl>al) {
     		diff = bl-al;
     		String temp = new StringBuffer(a).reverse().toString();
