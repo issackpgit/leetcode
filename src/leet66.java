@@ -1,34 +1,28 @@
+//Author : Issac Koshy Panicker
+
 import java.io.*;
 
 class Solution66 {
     public int[] plusOne(int[] digits) {
     
-    	int no =0;
+	int c = 0;
 	
-	int t =1;
-	
-    	
-    	for(int i = digits.length-1; i>=0; i--, t*=10) {
-    		no += digits[i]*t;
-    		}
-    	no++;
-    	int Count = 0;
-    	int temp =no;
-    	while(no > 0) {
-    		no = no / 10;
-    		Count = Count + 1; 
-    	}
-    	
-    	int[] d = new int[Count];
-    	
-    	while(temp!=0) {
-    		d[Count-1]=temp%10;
-    		temp/=10;
-    		Count--;
-    	}
-    	
-    	return d;
-    	
+	for(int i = digits.length-1 ; i>=0;i--) {
+		if(digits[i]!=9) {
+			digits[i] += 1; 
+			break;
+		}
+		digits[i] = 0;
+		c++;	
+	}
+			
+	if(c == digits.length) {
+		int[] d = new int[c+1];
+		d[0] = 1;
+		return d;
+	}
+		
+	return digits;
     	
     }
 }
