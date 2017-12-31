@@ -3,13 +3,24 @@ import java.io.*;
 class Solution58 {
     public int lengthOfLastWord(String s) {
     	
-    	  String[] arr = s.split(" ");    
-      
-    	  if(arr.length == 0) return 0;
-
-      int n = arr.length;
-      int no = arr[n-1].length();
-      	return no; 
+// Solution 1 
+//    	  String[] arr = s.split(" ");    
+//    	  if(arr.length == 0) return 0;
+//      return arr[arr.length-1].length();
+    	 	
+//Solution 2 
+    	
+    		int n= 0;
+     	for(int i = s.length()-1 ;i>=0;i--) {
+     	
+         if(s.charAt(i)==' ') {
+        	 	if(n!=0) 
+        	 		return n;
+         }
+        	 else n++;
+     	}
+     	
+    	return n;
     }
 }
 
