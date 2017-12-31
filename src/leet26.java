@@ -22,7 +22,6 @@ class Solution26 {
     		}
     	}
     	nums[j] = nums[nums.length-1];
- 
     	
     	return j+1;
     }
