@@ -29,7 +29,6 @@ class Solution67 {
     		}
     		a = new StringBuffer(temp).reverse().toString();
     		al=bl;
-    		
     	}
     	
     	for(int i = al-1, j = bl-1; i >= 0 ; i--,j--) {
