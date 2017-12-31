@@ -1,28 +1,30 @@
 //Author : Issac Koshy Panicker
+//All comments put together represent another solution
 
 import java.io.*;
 
 class Solution66 {
     public int[] plusOne(int[] digits) {
     
-	int c = 0;
+//	int c = 0;
 	
 	for(int i = digits.length-1 ; i>=0;i--) {
 		if(digits[i]!=9) {
-			digits[i] += 1; 
-			break;
+			digits[i] += 1;
+			//break;
+			return digits;
 		}
 		digits[i] = 0;
-		c++;	
+//		c++;	
 	}
 			
-	if(c == digits.length) {
-		int[] d = new int[c+1];
+//	if(c == digits.length) {
+		int[] d = new int[digits.length+1];
 		d[0] = 1;
 		return d;
-	}
+//	}
 		
-	return digits;
+//	return digits;
     	
     }
 }
