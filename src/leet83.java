@@ -6,32 +6,48 @@ import java.io.*;
 class Solution83 {
     public ListNode deleteDuplicates(ListNode head) {
     	
-    	if(head == null) return null;
-    	if(head.next == null) return head;
+//    	if(head == null) return null;
+//    	if(head.next == null) return head;
+//    	
+//    	ListNode temp = new ListNode(head.val);
+//    	ListNode ptr = temp;
+//    	
+//    	int tempv = head.val;
+//    	head = head.next;
+//    	
+//    	while(head!=null) {
+//    	if(head.next!=null && (head.val == head.next.val) && (tempv!=head.val)) {
+//        	ptr.next = new ListNode(head.val);
+//    		head = head.next;
+//        	ptr = ptr.next;
+//    	}
+//    	else {
+//    		if(tempv!=head.val) {
+//    		ptr.next = new ListNode(head.val);
+//        	ptr = ptr.next;
+//    		}
+//    	}
+//    	head = head.next;
+//    	tempv = ptr.val;
+//    	}
+//        
+//    	return temp;
     	
-    	ListNode temp = new ListNode(head.val);
-    	ListNode ptr = temp;
+    	if(head == null || head.next == null) return head;
     	
-    	int tempv = head.val;
-    	head = head.next;
+    	ListNode ptr = head;
     	
-    	while(head!=null) {
-    	if(head.next!=null && (head.val == head.next.val) && (tempv!=head.val)) {
-        	ptr.next = new ListNode(head.val);
-    		head = head.next;
-        	ptr = ptr.next;
+    	while(ptr!=null) {
+    	if(ptr.next!=null && (ptr.val == ptr.next.val)) {
+        	ptr.next = ptr.next.next;
     	}
     	else {
-    		if(tempv!=head.val) {
-    		ptr.next = new ListNode(head.val);
         	ptr = ptr.next;
     		}
     	}
-    	head = head.next;
-    	tempv = ptr.val;
-    	}
         
-    	return temp;
+    	return head;
+    
     }
 }
 
