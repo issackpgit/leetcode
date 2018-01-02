@@ -1,28 +1,33 @@
 import java.io.*;
-/* -----------------------------------
- *  WARNING:
- * -----------------------------------
- *  Your code may fail to compile
- *  because it contains public class
- *  declarations.
- *  To fix this, please remove the
- *  "public" keyword from your class
- *  declarations.
- */
 
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
 class Solution83 {
     public ListNode deleteDuplicates(ListNode head) {
+    	
+    	if(head == null) return null;
+    	if(head.next == null) return head;
+    	
+    	ListNode temp = new ListNode(0);
+    	ListNode ptr = temp;
+    	int tempv = head.val;
+    	
+    	while(head!=null) {
+    	if(head.next!=null && (head.val == head.next.val) && (tempv!=head.val)) {
+        	ptr.next = new ListNode(head.val);
+    		head = head.next;
+        	ptr = ptr.next;
+    	}
+    	else {
+    		if(tempv!=head.val) {
+    		ptr.next = new ListNode(head.val);
+        	ptr = ptr.next;
+    		}
+    	}
+    	head = head.next;
+    	tempv = ptr.val;
+    	}
         
     	
-    	return head;
+    	return temp.next;
     }
 }
 
