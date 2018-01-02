@@ -1,3 +1,6 @@
+//Author : Issac Koshy Panicker
+//01/01/2018
+
 import java.io.*;
 
 class Solution83 {
@@ -6,9 +9,11 @@ class Solution83 {
     	if(head == null) return null;
     	if(head.next == null) return head;
     	
-    	ListNode temp = new ListNode(0);
+    	ListNode temp = new ListNode(head.val);
     	ListNode ptr = temp;
+    	
     	int tempv = head.val;
+    	head = head.next;
     	
     	while(head!=null) {
     	if(head.next!=null && (head.val == head.next.val) && (tempv!=head.val)) {
@@ -26,8 +31,7 @@ class Solution83 {
     	tempv = ptr.val;
     	}
         
-    	
-    	return temp.next;
+    	return temp;
     }
 }
 
