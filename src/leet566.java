@@ -1,3 +1,6 @@
+//Author : Issac Koshy Panicker
+//03-01-2018
+
 import java.io.*;
 
 class Solution566 {
@@ -11,22 +14,25 @@ class Solution566 {
     	 
     	 if(m*n!=r*c) return nums;
     	 
-    	 int[] temp = new int[m*n];
+//    	 int[] temp = new int[m*n];
+//    	 
+//    	 for(int i=0;i<m;i++) {
+//    		 for(int j=0;j<n;j++) {
+//    			 temp[k] = nums[i][j];
+//    			 k++;
+//    		 }
+//    	 }
+//    	 
+//    	k=0; 	 
+//    	 for(int i = 0; i<r;i++) {
+//    		 for(int j =0;j<c;j++) {
+//    			 ret[i][j] = temp[k];
+//    			 k++;
+//    		 }
+//    	 }
     	 
-    	 for(int i=0;i<m;i++) {
-    		 for(int j=0;j<n;j++) {
-    			 temp[k] = nums[i][j];
-    			 k++;
-    		 }
-    	 }
-    	 
-    	k=0; 	 
-    	 for(int i = 0; i<r;i++) {
-    		 for(int j =0;j<c;j++) {
-    			 ret[i][j] = temp[k];
-    			 k++;
-    		 }
-    	 }
+    	 for (int i=0;i<r*c;i++) 
+    	        ret[i/c][i%c] = nums[i/m][i%m];
        
     	return ret;
     	
