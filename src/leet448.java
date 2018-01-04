@@ -8,20 +8,34 @@ class Solution448 {
     public List<Integer> findDisappearedNumbers(int[] nums) {
      
     	List<Integer> list = new LinkedList<Integer>();
+    	List<Integer> list1 = new LinkedList<Integer>();
     	
     	boolean[] visit = new boolean[nums.length];
     	
-    	for(int i=0;i<nums.length;i++) {
-    			visit[nums[i]-1]=true;
-    	}
+//    	for(int i=0;i<nums.length;i++) {
+//    			visit[nums[i]-1]=true;
+//    	}
+//    	
+//    	for(int i= 0;i< nums.length;i++) {
+//    		if(!visit[i]) {
+//    			list.add(i+1);
+//    		}
+//    	}
     	
-    	for(int i= 0;i< nums.length;i++) {
-    		if(!visit[i]) {
-    			list.add(i+1);
+    	for(int i =0;i<nums.length;i++) {
+    		 int val = Math.abs(nums[i]) - 1;
+    		if(nums[val]>0) {
+    			nums[val]=-1*nums[val];
     		}
     	}
     	
-    return list;
+    	for(int i = 0; i < nums.length; i++) {
+            if(nums[i] > 0) {
+                list1.add(i+1);
+            }
+        }
+    	
+    return list1;
     }
 }
 
