@@ -1,19 +1,24 @@
+//Author : Issac Koshy Panicker
+//03-01-2018
+
 import java.io.*;
 import java.util.*;
 
 class Solution448 {
     public List<Integer> findDisappearedNumbers(int[] nums) {
      
-    	Arrays.sort(nums);
     	List<Integer> list = new LinkedList<Integer>();
     	
-    	for(int i=1;i<nums.length;i++) {
-    		if(nums[i-1]!=i && !list.contains(nums[i-1]))
-    			{
-//    			System.out.println(i);
-    			list.add(i);
-    			}
-    			
+    	boolean[] visit = new boolean[nums.length];
+    	
+    	for(int i=0;i<nums.length;i++) {
+    			visit[nums[i]-1]=true;
+    	}
+    	
+    	for(int i= 0;i< nums.length;i++) {
+    		if(!visit[i]) {
+    			list.add(i+1);
+    		}
     	}
     	
     return list;
