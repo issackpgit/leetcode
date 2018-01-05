@@ -1,10 +1,21 @@
+//Author : Issac Koshy Panicker
+//05-01-2018
+
 import java.io.*;
 import java.util.*;
 
 class Solution104 {
     public int maxDepth(TreeNode root) {
-    	
-    	return 0;
+    
+    	 if(root==null){
+             return 0;
+         }
+    	 
+    	 	int m = maxDepth(root.left);
+    	 	int n = maxDepth(root.right);
+    	 	
+    	 	return 1+Math.max(m, n);
+//         return 1+Math.max(maxDepth(root.left),maxDepth(root.right));
         
     }
 }
