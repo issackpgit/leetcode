@@ -8,24 +8,24 @@ class Solution463 {
     
     	int m = grid.length;
     	int n = grid[0].length;	
-	int count = 0;
+	int neighbour = 0;
 	
 	int p=0;
 	
 	for(int i = 0; i<m ;i++) {
 		for(int j = 0; j<n ; j++) {
-			count =0;
+			neighbour =0;
 			if(grid[i][j]==1) {
 				if (i>0 && grid[i - 1][j]==1)
-			        count++;
+			        neighbour++;
 			    if (j > 0 && grid[i][j - 1]==1)
-			        count++;
+			        neighbour++;
 			    if (i < m-1 && grid[i + 1][j]==1)
-			        count++;
+			        neighbour++;
 			    if (j < n-1 && grid[i][j + 1]==1)
-			        count++;
+			        neighbour++;
 			    
-			    p+=4-count;
+			    p+=4-neighbour;
 			}
 			
 			
