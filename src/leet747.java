@@ -8,16 +8,17 @@ import java.util.Arrays;
 class Solution747 {
     public int dominantIndex(int[] nums) {
     
-    	 int maxValue = nums[0]; 
-    	 int maxIndex = 0;
+    	 int maxValue = nums[0], maxIndex = 0;
+    	 
     	    for(int i=1;i < nums.length;i++){ 
     	      if(nums[i] > maxValue){ 
     	         maxValue = nums[i]; 
     	         maxIndex =i;
     	      } 
     	    } 
-   int flag =0;
-    	    Arrays.sort(nums);
+    	    
+    	int flag =0;
+    	Arrays.sort(nums);
     	for(int i =0;i<nums.length-1;i++) {
     		if(maxValue<nums[i]*2) {
     			flag =1;
