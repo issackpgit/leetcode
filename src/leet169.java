@@ -1,3 +1,6 @@
+//Author : Issac Koshy Panicker
+//06-01-2018
+
 import java.io.*;
 import java.util.*;
 
@@ -5,6 +8,8 @@ class Solution169 {
     public int majorityElement(int[] nums) {
         
     	int n = nums.length/2;
+    	
+    	if(nums.length==1) return nums[0];
     	
     	Map<Integer, Integer> map= new HashMap<Integer,Integer>();
     	
