@@ -1,9 +1,24 @@
+//Author : Issac Koshy Panicker
+//07-01-2018
+
 import java.io.*;
 
 class Solution674 {
     public int findLengthOfLCIS(int[] nums) {
-        
-    	return 0;
+    	
+    	if(nums.length ==0) return 0;
+  
+    	int max =1,a=0,diff=0,i=0;
+    	
+    	for(i =0;i<nums.length;i++) {
+    		if(i>0 && nums[i-1]>=nums[i]) {
+    			diff = i-a;
+    			a = i;
+    			if(diff>max) max =diff;
+    		} 		
+    	}
+    		return Math.max(max, i-a);
+
     }
 }
 
