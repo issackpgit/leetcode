@@ -1,34 +1,20 @@
+//Author : Issac Koshy Panicker
+//06-01-2018
+
 import java.io.*;
 
 class Solution121 {
     public int maxProfit(int[] prices) {
     	
-	if(prices.length==0) return 0;
-    	
-    	int buy = prices[0];
-    	int sell = 0,p=0, temp =0;
-    	int max =Integer.MIN_VALUE;
-        
-     	for(int i = 0 ;i<prices.length-1;i++) {
-     		if(prices[i]>prices[i+1]) {
-     			sell = prices[i];
-     			p=sell-buy;
-     			buy = prices[i+1];
-//     			temp=p;
-     			
-     			for(int j = i+1;j< prices.length;j++) {
-     				if(prices[j]>max) {
-     					max = prices[j];
-     				}
-     			}
-     			
-     			temp = Math.max(temp, max-buy);
-     			max =Integer.MIN_VALUE;
-     		}
-    		
-    		}
-  
-    	return p;
+    	int minprice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minprice)
+                minprice = prices[i];
+            else if (prices[i] - minprice > maxprofit)
+                maxprofit = prices[i] - minprice;
+        }
+        return maxprofit;
     	
     }
 }
