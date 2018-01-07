@@ -2,7 +2,6 @@
 //06-01-2018
 
 import java.io.*;
-import java.util.Arrays;
 
 class Solution628 {
     public int maximumProduct(int[] nums) {
