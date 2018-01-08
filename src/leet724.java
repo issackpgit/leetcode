@@ -1,9 +1,20 @@
+//Author : Issac Koshy Panicker
+//07-01-2018
+
 import java.io.*;
 
 class Solution724 {
     public int pivotIndex(int[] nums) {
-       
-    	return 0;
+   
+    	int sum = 0 , leftsum = 0,rightsum = 0;
+    	for(int item : nums) sum+=item;
+    	
+    	for(int i = 0;i<nums.length;i++) {
+    		rightsum = sum - leftsum - nums[i];
+    		if(rightsum == leftsum) return i;
+    		leftsum += nums[i];
+    	}
+    	return -1;
     }
 }
 
