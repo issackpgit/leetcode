@@ -1,9 +1,28 @@
+//Author : Issac Koshy Panicker
+//08-01-2018
+
 import java.io.*;
 import java.util.*;
 
 class Solution189 {
     public void rotate(int[] nums, int k) {
    
+//    	k %=nums.length;
+//   	 if(k>nums.length) return;
+//   	
+//       int n = nums.length;
+//       int[] arr = new int[k];
+//       
+//       for(int i =nums.length-1,j=0;j<k;j++,i--) {
+//       	arr[j]=nums[i];
+//       }
+//       for(int i = n-k-1,j=nums.length-1;i>=0;i--,j--) {
+//       		nums[j]=nums[i];
+//       }
+//       for(int i =k-1,j=0;j<k;j++,i--) {
+//       	nums[i] = arr[j];
+//       }
+    	
     	int[] arr = new int[nums.length];
     	for(int i =0;i<nums.length;i++) {
     		arr[(i+k)%nums.length]=nums[i];
