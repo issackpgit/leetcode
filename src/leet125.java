@@ -1,9 +1,15 @@
+//Author : Issac Koshy Panicker
+//08-01-2018
+
 import java.io.*;
 
 class Solution125 {
     public boolean isPalindrome(String s) {
-     
-    	return true;
+    	
+    	if(s.replaceAll("[^a-zA-Z0-9]+", "").toLowerCase().equals(new StringBuilder(s.replaceAll("[^a-zA-Z0-9]+", "")).reverse().toString().toLowerCase()))
+     return true;
+    	else
+    		return false;
     }
 }
 
