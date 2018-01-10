@@ -1,3 +1,6 @@
+//Author : Issac Koshy Panicker
+//09-01-2018
+
 import java.io.*;
 import java.util.*;
 
@@ -12,16 +15,26 @@ class Solution107 {
     	 List<List<Integer>> list = new ArrayList<List<Integer>>();
     	 
     	 while(!q.isEmpty()) {
-    		 TreeNode node = q.remove();
+    		 
     		 int h = q.size();
     		 List<Integer> list1 = new ArrayList<Integer>();
     		 
-    		 
-    		 
+    		 while(h>0) {
+    			 TreeNode node = q.peek();
+    			 list1.add(node.val);
+    			 q.remove();
+    			 
+    			 if(node.left != null)
+                q.add(node.left);
+              if(node.right != null)
+                q.add(node.right);
+              h--;
+    		 }
+    		 list.add(0,list1);
     	 }
     	 
-
-    	return null;
+    	
+    	return list;
         
     }  
 }
