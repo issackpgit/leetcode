@@ -18,16 +18,14 @@ class Solution103 {
     		 int h = q.size();
     		 List<Integer> list1 = new ArrayList<Integer>();
     		 while(h>0) {
-    			 TreeNode node = q.peek();
-    			 // list1.add(node.val);
-    			 
+    			 TreeNode node = q.peek();    			 
     			 if (zigzag) {
-            list1.add(node.val);
-        }
-        else {
-            list1.add(0,node.val);
-        }
-                 q.remove();
+    				 list1.add(node.val);
+    			 }
+    			 else {
+    				 list1.add(0,node.val);
+    			 }
+    			 q.remove();
     			 if(node.right != null)
     				 q.add(node.right);
  			 if(node.left != null)
@@ -35,7 +33,7 @@ class Solution103 {
              h--;
     		 }
     		 list.add(list1);
-             zigzag = !zigzag;
+    		 zigzag = !zigzag;
     	 }    	
     	return list;  
     }
