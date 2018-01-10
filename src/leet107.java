@@ -5,19 +5,25 @@ import java.util.*;
 class Solution107 {
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
 		
-    	 Stack<TreeNode> stack = new Stack<TreeNode>();
+    	 Queue<TreeNode> q = new LinkedList<TreeNode>();
     	 
-    	 stack.add(root);
+    	 q.add(root);
     	 
-    	 while(!stack.isEmpty()) {
-    		 TreeNode node = stack.pop();
+    	 List<List<Integer>> list = new ArrayList<List<Integer>>();
+    	 
+    	 while(!q.isEmpty()) {
+    		 TreeNode node = q.remove();
+    		 int h = q.size();
+    		 List<Integer> list1 = new ArrayList<Integer>();
+    		 
+    		 
     		 
     	 }
     	 
 
     	return null;
         
-    }
+    }  
 }
 
 public class leet107 {
