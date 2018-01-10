@@ -7,34 +7,29 @@ import java.util.*;
 class Solution107 {
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
 		
+    	 List<List<Integer>> list = new ArrayList<List<Integer>>();
+     
+    	 if(root==null) return list;
+         
     	 Queue<TreeNode> q = new LinkedList<TreeNode>();
-    	 
     	 q.add(root);
     	 
-    	 List<List<Integer>> list = new ArrayList<List<Integer>>();
-    	 
     	 while(!q.isEmpty()) {
-    		 
     		 int h = q.size();
     		 List<Integer> list1 = new ArrayList<Integer>();
-    		 
     		 while(h>0) {
     			 TreeNode node = q.peek();
     			 list1.add(node.val);
     			 q.remove();
-    			 
     			 if(node.left != null)
                 q.add(node.left);
-              if(node.right != null)
+             if(node.right != null)
                 q.add(node.right);
-              h--;
+             h--;
     		 }
     		 list.add(0,list1);
-    	 }
-    	 
-    	
-    	return list;
-        
+    	 }    	
+    	return list;  
     }  
 }
 
