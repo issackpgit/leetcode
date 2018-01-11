@@ -1,9 +1,24 @@
+//Author : Issac Koshy Panicker
+//10-01-2018
+
 import java.io.*;
 
 class Solution206 {
     public ListNode reverseList(ListNode head) {
+    	
+    	if(head == null||head.next==null) return head;
         
-    	return head;
+    	ListNode temp = null;
+    	ListNode ptr = head;
+    	
+    	while(ptr!=null) {
+    		ListNode rev = new ListNode(ptr.val);
+    		rev.next = temp;
+    		temp = rev;
+    		ptr = ptr.next;
+    	}
+    	
+    	return temp;
     }
 }
 
