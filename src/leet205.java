@@ -16,11 +16,8 @@ class Solution205 {
     			}
     			else return false;
     		}
-    		for(char j : map.keySet()) {
-    			if(map.get(j)==t.charAt(i)) return false;
-    		}
-    		map.put(s.charAt(i), t.charAt(i));
-    		
+        		if(map.containsValue(t.charAt(i))) return false;
+                map.put(s.charAt(i),t.charAt(i));    		
     	}
     	
     	return true;
