@@ -65,6 +65,7 @@ class Solutionexam {
      
          return ansend-ansbegin+1;
          
+         // Minimum window with all unique elements
 //    	 Map<Integer,Integer> map = new HashMap<Integer,Integer>();
 //    	
 //    	 for(int i =0;i<a.length;i++) {
@@ -100,6 +101,8 @@ class Solutionexam {
 //    	    }
 //    	return bestLength;
     	
+         
+         //Skyline strokes
 //        int strokes=0;
 //        int level =0;
 //    	  for (int height : A) {
@@ -117,7 +120,7 @@ class Solutionexam {
 //    	  }
 //    	  return strokes;    
     	
-    	
+    	//Missing number
     	
 //        Map<Integer,Integer> map = new HashMap<Integer,Integer>();
 //        
