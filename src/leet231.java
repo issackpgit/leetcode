@@ -1,15 +1,27 @@
+//Author : Issac Koshy Panicker
+//Date : 19-01-2018
 import java.io.*;
 
 class Solution231 {
     public boolean isPowerOfTwo(int n) {
         
     	
-   System.out.println(Math.log(n)/Math.log(2));
-   double d = Math.log(n)/Math.log(2);
-   
-   if(d==Math.ceil(d)) 
-    	return true;
-   else return false;
+    	 if (n == 0)
+             return false;
+          
+         while (n != 1)
+         {
+             if (n % 2 != 0)
+                 return false;
+             n = n / 2;
+         }
+         return true; 
+         
+//   double d = Math.log(n)/Math.log(2);
+//   
+//   if(d==Math.ceil(d)) 
+//    	return true;
+//   else return false;
     }
 }
 
