@@ -1,5 +1,6 @@
 //Author : Issac Koshy Panicker
-//Date : 19-01-2018
+//19-01-2018
+
 import java.io.*;
 
 class Solution231 {
