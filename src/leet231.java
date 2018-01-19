@@ -5,8 +5,7 @@ import java.io.*;
 
 class Solution231 {
     public boolean isPowerOfTwo(int n) {
-        
-    	
+ 
     	 if (n == 0)
              return false;
           
