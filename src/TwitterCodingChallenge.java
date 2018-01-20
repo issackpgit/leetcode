@@ -4,7 +4,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class twitter {
+public class TwitterCodingChallenge {
 	private static Date startDate;
 	private static Date endDate;
 	private static List<String> initialList = new ArrayList<>();
