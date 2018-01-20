@@ -10,7 +10,7 @@ public class twitter {
 	private static List<String> initialList = new ArrayList<>();
 	private static List<Data> intermediateList = new ArrayList<>();
 
-	//	private static List<OutputEntity> outputEntities = new ArrayList<>();
+	private static List<OutputData> outputDatas = new ArrayList<>();
 	
     public static void main(String args[] ) throws Exception {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT */
@@ -20,10 +20,10 @@ public class twitter {
     	{
 	    	String line = in.nextLine();
 	    	lineNo ++;
-//	    	if(line.equalsIgnoreCase("exit"))
-//	    	{
-//	    		break;
-//	    	}
+	    	if(line.equalsIgnoreCase("exit"))
+	    	{
+	    		break;
+	    	}
 	    	if (lineNo==1)
 	    	{
 	    		 String[] dates = line.split(", *");
@@ -37,6 +37,11 @@ public class twitter {
     	}
     	
     	convertInitialtoFinalList();
+    	
+    	for(OutputData outputData : outputDatas)
+    	{
+    	System.out.println(outputData.toString());
+    	}
     
     	in.close();
     }
@@ -51,7 +56,27 @@ public class twitter {
     ListComparator listComparator = new ListComparator();
     	Collections.sort(intermediateList, listComparator);
 
-	
+    	if (intermediateList.size() <= 1)
+    	{
+    	return;
+    	}
+    	List<Data> tempList = new ArrayList<>();
+    	OutputData last = new OutputData(intermediateList.get(0));
+    	for(int i = 1; i < intermediateList.size(); i ++)
+    	{
+    		Data current = intermediateList.get(i);
+    	if
+    	(last.getDate().isInSameMonth(current.getDate()))
+    	{
+    	last.addDescription(current.getDescription());
+    	}
+    	else
+    	{
+    	outputDatas.add(last);
+    	last = new OutputData(current);
+    	}
+    	}
+    	outputDatas.add(last);
 }
 
 	private static void checkData(String line) {
