@@ -26,6 +26,7 @@ class Date {
 	public void setDay(int day) {
 		this.day = day;
 	}
+	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
