@@ -1,11 +1,40 @@
+//Author : Issac Koshy Panicker
+//21-01-2018
+
 import java.io.*;
 import java.util.*;
 
 class Solution108 {
     public TreeNode sortedArrayToBST(int[] nums) {
-		return null;
+    	
+    	if (nums.length == 0) {
+            return null;
+        }
+    	
+    	int start = 0;
+    	int end = nums.length-1;
+    	
+    
+    	TreeNode node = findRecursive(nums,start, end);
+    	
+	return node;
         
     }
+
+	private TreeNode findRecursive(int[] nums, int start, int end) {
+		// TODO Auto-generated method stub
+		
+		if(start>end)
+			return null;
+		int mid = (start+end)/2;
+		TreeNode node = new TreeNode(nums[mid]);
+		
+		node.left = findRecursive(nums, start, mid-1);
+		
+		node.right = findRecursive(nums, mid+1, end);
+		
+		return node;
+	}
 }
 
 public class leet108 {
