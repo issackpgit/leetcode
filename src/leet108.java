@@ -10,12 +10,8 @@ class Solution108 {
     	if (nums.length == 0) {
             return null;
         }
-    	
-    	int start = 0;
-    	int end = nums.length-1;
-    	
-    
-    	TreeNode node = findRecursive(nums,start, end);
+   
+    	TreeNode node = findRecursive(nums,0, nums.length-1);
     	
 	return node;
         
@@ -26,7 +22,9 @@ class Solution108 {
 		
 		if(start>end)
 			return null;
+		
 		int mid = (start+end)/2;
+		
 		TreeNode node = new TreeNode(nums[mid]);
 		
 		node.left = findRecursive(nums, start, mid-1);
