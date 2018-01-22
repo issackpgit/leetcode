@@ -15,16 +15,13 @@ class Solution234 {
     		stack.push(ptr.val);
     		ptr=ptr.next;
     	}
-    
-    	
-    	
+      	
     	while(!stack.isEmpty()) {
     		int val = stack.pop();
     		if(val!=head.val) return false;
     		head= head.next;
     	}
-    	
-    	
+
     	return true;
     	
     }
