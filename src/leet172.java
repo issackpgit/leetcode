@@ -2,7 +2,6 @@
 //23-01-2018
 
 import java.io.*;
-import java.util.*;
 
 class Solution172 {
     public int trailingZeroes(int n) {
