@@ -5,13 +5,11 @@ import java.io.*;
 
 class Solution171 {
     public int titleToNumber(String s) {
-    	
-    	int a =0;
-   for(int i =0;i<s.length();i++,a*=26) {
-    	 a +=(int)s.charAt(i)-65+1;
-    	 if(i==s.length()-1) return a;
-    	}
-    	return a;
+    	 int a =0;
+    	   for(int i =0;i<s.length();i++) {
+    	    	 a = a*26 + (int)s.charAt(i)-65+1;
+    	    	}
+    	    return a;
         
     }
 }
