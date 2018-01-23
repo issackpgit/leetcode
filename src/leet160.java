@@ -9,24 +9,69 @@ import java.util.*;
 class Solution160 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
     	
-    	Set<ListNode> set = new HashSet<ListNode>();
-    	
-    	while(headA!=null) {
-    		set.add(headA);
-    		headA=headA.next;
-    	}
-     	while(headB!=null) {
-    		
-     		if(set.contains(headB)) {
-     			return headB;
-     		}
-     		
-    		headB=headB.next;
-    	}
-    	
-    	return null;
-        
+    	 int lenA = length(headA), lenB = length(headB);
+     int diff = Math.abs(lenA-lenB);
+     int temp =diff;
+     if(lenA>lenB){
+          while(diff!=0){
+        	  	headA=headA.next;
+        	  	diff--;
+          }
+     }
+     else while(temp!=0){
+    	 	headB=headB.next;
+    	 	temp--;
+     }
+               
+       while (headA != headB) {
+           headA = headA.next;
+           headB = headB.next;
+       }
+      
+       return headA;
+
+       
+//        ListNode a = headA;
+//        ListNode b = headB;
+//        
+//        //if a & b have different len, then we will stop the loop after second iteration
+//        while( a != b){
+//        	//for the end of first iteration, we just reset the pointer to the head of another linkedlist
+//            a = a == null? headB : a.next;
+//            b = b == null? headA : b.next;    
+//        }
+//        
+//        return a;
+       
+//Using HashSet Space Complexity O(n)
+       
+//    	Set<ListNode> set = new HashSet<ListNode>();
+//    	
+//    	while(headA!=null) {
+//    		set.add(headA);
+//    		headA=headA.next;
+//    	}
+//     	while(headB!=null) {
+//    		
+//     		if(set.contains(headB)) {
+//     			return headB;
+//     		}
+//     		
+//    		headB=headB.next;
+//    	}
+//    	
+//    	return null;
+//        
     }
+
+private int length(ListNode node) {
+    int length = 0;
+    while (node != null) {
+        node = node.next;
+        length++;
+    }
+    return length;
+}
 }
 
 public class leet160 {
