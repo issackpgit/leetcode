@@ -7,18 +7,35 @@ import java.util.*;
 class Solution141 {
     public boolean hasCycle(ListNode head) {
     	
-    	Set<ListNode> set = new HashSet<ListNode>();
+    	  if (head == null || head.next == null) {
+    	        return false;
+    	    }
+    	  
+    	    	ListNode slow = head;
+    	    	ListNode fast = head.next;
+    	    	
+    	    	while(slow!=fast) {
+    	    		if(fast ==null || fast.next==null) {
+    	    			return false;
+    	    		}else
+    	    			{
+    	    			slow = slow.next;
+    	    			fast = fast.next.next;
+    	    			}
+    	    	}
     	
-    	ListNode ptr = head;
-    	
-    	while(head!=null) {
-    		if(set.contains(head)) {
-    			return true;
-    		}
-    		else set.add(head);
-    		head = head.next;
-    	}
-    	return false;
+    	    	return true;
+    	    	
+//    	Set<ListNode> set = new HashSet<ListNode>();
+//    	
+//    	while(head!=null) {
+//    		if(set.contains(head)) {
+//    			return true;
+//    		}
+//    		else set.add(head);
+//    		head = head.next;
+//    	}
+//    	return false;
     	
     }
 }
