@@ -1,12 +1,30 @@
+//Author : Issac Koshy Panicker
+//23-01-2018
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.*;
 
 class Solution160 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
     	
-    	return headA;
+    	Set<ListNode> set = new HashSet<ListNode>();
     	
+    	while(headA!=null) {
+    		set.add(headA);
+    		headA=headA.next;
+    	}
+     	while(headB!=null) {
+    		
+     		if(set.contains(headB)) {
+     			return headB;
+     		}
+     		
+    		headB=headB.next;
+    	}
+    	
+    	return null;
         
     }
 }
