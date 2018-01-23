@@ -7,21 +7,7 @@ import java.util.*;
 class Solution141 {
     public boolean hasCycle(ListNode head) {
     	
-    	Stack<Integer> stack = new Stack<Integer>();
-    	
-    	ListNode ptr = head;
-    	
-    	while(ptr!=null) {
-    		stack.push(ptr.val);
-    		ptr=ptr.next;
-    	}
-      	
-    	while(!stack.isEmpty()) {
-    		int val = stack.pop();
-    		if(val!=head.val) return false;
-    		head= head.next;
-    	}
-
+   
     	return true;
     	
     }
