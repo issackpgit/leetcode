@@ -7,8 +7,18 @@ import java.util.*;
 class Solution141 {
     public boolean hasCycle(ListNode head) {
     	
-   
-    	return true;
+    	Set<ListNode> set = new HashSet<ListNode>();
+    	
+    	ListNode ptr = head;
+    	
+    	while(head!=null) {
+    		if(set.contains(head)) {
+    			return true;
+    		}
+    		else set.add(head);
+    		head = head.next;
+    	}
+    	return false;
     	
     }
 }
