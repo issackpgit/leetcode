@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 class Solution190 {
-    // you need treat n as an unsigned value
     public int reverseBits(int n) {
     	
     	 int result = 0;
