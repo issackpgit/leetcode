@@ -1,10 +1,20 @@
+//Author : Issac Koshy Panicker
+//23-01-2018
+
 import java.io.*;
 
 class Solution168 {
     public String convertToTitle(int n) {
        
-    	
-    	return null;
+    	 StringBuilder result = new StringBuilder();
+
+         while(n>0){
+             n--;
+             result.append((char)('A' + n % 26));
+             n /= 26;
+         }
+
+         return result.reverse().toString();
     }
 }
 
