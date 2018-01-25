@@ -11,8 +11,9 @@ class Solution520 {
     	
     	if(Character.toUpperCase(word.charAt(0))==word.charAt(0)&& word.substring(1, word.length()).toLowerCase().equals(word.substring(1, word.length()))) return true;
     	
-    	
     	return false;
+    	
+//    	 return word.matches("[A-Z]+|[a-z]+|[A-Z][a-z]+");
     }
 }
 
