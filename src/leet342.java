@@ -9,6 +9,9 @@ class Solution342 {
     	return num > 0 && (num&(num-1)) == 0 && (num & 0x55555555) != 0;
 
     	
+//    	return (Math.log(num)/Math.log(4) %1 ==0) ;
+    	
+    	
 //    		if(num ==0) return false;
 //        double a = Math.ceil((double)Math.log(num)/(double)Math.log(4));
 //        if(Math.log(num)/Math.log(4)==a) return true;
