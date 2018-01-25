@@ -1,3 +1,6 @@
+//Author: Issac Koshy Panicker
+//25-01-2018
+
 import java.io.*;
 
 class Solution326 {
