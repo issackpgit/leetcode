@@ -1,10 +1,35 @@
+//Author: Issac Koshy Panicker
+//24-01-2018
+
 import java.io.*;
 
 class Solution345 {
     public String reverseVowels(String s) {
         
     	
-    	return null;
+    	char[] c = s.toCharArray();
+    	String v = "aeiouAEIOU";
+    	
+    	int left = 0;
+    	int right = s.length()-1;
+    	
+    	while(left<right) {
+    		if(v.indexOf(c[left])<0) {
+    			left++;
+    		}
+    		if(v.indexOf(c[right])<0) {
+    			right--;
+    		}
+    		if(v.indexOf(c[left])>=0&&v.indexOf(c[right])>=0) {
+    			char temp = c[left];
+    			c[left] = c[right];
+    			c[right] = temp;
+    			left++;
+    			right--;
+    		}
+    	}
+    	
+    	return new String(c);
     }
 }
 
