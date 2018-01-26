@@ -20,10 +20,8 @@ class Solution350 {
     			map.put(nums2[i], map.get(nums2[i])-1);
     		}
     	}
-    		
-    	
+    		 	
     	int[] arr = new int[set2.size()];
-
     	int index = 0;
 
     	for( Integer i : set2 ) {
