@@ -15,6 +15,7 @@ class Solution367 {
     }
 }
 
+
 public class leet367 {
     public static String booleanToString(boolean input) {
         return input ? "True" : "False";
