@@ -51,7 +51,7 @@ public class leet349 {
         if (length == 0) {
             return "[]";
         }
-    
+  
         String result = "";
         for(int index = 0; index < length; index++) {
             int number = nums[index];
