@@ -1,10 +1,37 @@
+//Author : Issac Koshy Panicker
+//27-01-2018
+
 import java.io.*;
 
 class Solution415 {
     public String addStrings(String num1, String num2) {
         
-        return Integer.toString(Integer.parseInt(num1)+Integer.parseInt(num2));
+    	int diff = Math.abs(num1.length()-num2.length());
+		String ab="";
+		for(int i =0;i<diff;i++) {
+			ab+="0";
+		}
+    	if(num1.length()>num2.length()) {
+    		num2=ab+num2;
+    	}
+    	else {
+    		num1 = ab+num1;
+    	}
+    	 StringBuilder sb = new StringBuilder();
+         int carry = 0;
         
+         for(int i =num1.length()-1, j = num2.length()-1; i>=0 || j>=0 || carry ==1; i--,j--) {
+        	 	if(i<0 && j<0) {
+        	 		sb.append(carry);
+        	 		break;
+        	 	}
+        	 	int a = Character.getNumericValue(num1.charAt(i));
+        	 	int b = Character.getNumericValue(num2.charAt(i));
+        	 	sb.append((a+b+carry)%10);
+        	 	carry = (a+b+carry)/10;
+        	 	
+         }
+        return sb.reverse().toString();
     }
 }
 
