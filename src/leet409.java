@@ -13,11 +13,9 @@ class Solution409 {
     	for(int i =0;i<s.length();i++) {
     		map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0)+1);
     	}
-//    	if(map.size()==1) return s.length();
     	int count =0,flag = 0;
     	for(char c : map.keySet()) {
-    		count+=map.get(c)/2;
-    		
+    		count+=map.get(c)/2; 		
     		if(map.get(c)%2==1)flag =1;
     	}
     	count*=2;
