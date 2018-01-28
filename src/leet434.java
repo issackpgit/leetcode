@@ -1,16 +1,24 @@
+//Author : Issac Koshy Panicker
+//27-01-2018
+
 import java.io.*;
 
 class Solution434 {
     public int countSegments(String s) {
-      int count=0;
-      s=s.trim();
-    	for(int i =0;i<s.length();i++) {
-    		if(s.charAt(i)==' ') {
-    			count++;
-    		}
-    	}
-    	
-    	return count+1;
+    	 s=s.trim();
+         if(s.length()==0) return 0;
+        int count=0;
+      int flag =0;
+      
+      for(int i =0;i<s.length();i++) {
+     	 if(s.charAt(i)==' '||s.charAt(i)=='\t') {
+     		 flag =1;
+     	 }else if(flag ==1) {
+     		 count++;
+     		 flag = 0;
+     	 }
+      }
+      return count+1;
     }
 }
 
