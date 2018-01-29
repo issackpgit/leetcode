@@ -1,3 +1,5 @@
+//Author : Issac Koshy Panicker
+//29-01-2018
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,6 +24,7 @@ class Solution443 {
         					index++;
         					}
         			}
+        			count = 0;
         		}
         }
       
@@ -40,7 +43,7 @@ public class leet443{
 	        int b = new Solution443().compress(c);
 	    
 	        for(int i =0;i<b;i++)
-	        	System.out.println(c[b]);
+	        	System.out.println(c[i]);
 	        
 	 }
 }
