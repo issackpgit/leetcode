@@ -27,20 +27,23 @@ class Solution {
 //    }
 	
 	public int[] twoSum(int[]nums,int target) {
-		int p[] = new int[2];
-		Map<Integer,Integer> map = new HashMap<>();
-		for(int i =0;i<nums.length;i++)
+	
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for(int i =0;i<nums.length;i++) {
 			map.put(nums[i], i);
+		}
 		
-		for(int i =0;i < nums.length;i++) {
-			int c  = target - nums[i];
-			if((map.containsKey(c))&&(map.get(c)!=i)) {
-				p[1] = map.get(c);
-				p[0] = i;
-				return p;
+	     int p[] = new int[2];
+		for(int i=0;i<nums.length;i++) {
+			int c = target-nums[i];
+			if(map.containsKey(c)&&map.get(c)!=i) {
+				p[0]=map.get(c);
+				p[1]=i;
 			}
 		}
-		throw new IllegalArgumentException("No two sum solution");
+		
+		return p;
+		
 	}
 }
 
