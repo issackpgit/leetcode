@@ -14,43 +14,68 @@ import java.util.*;
 class Solution19 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
     	
-    	ListNode list = new ListNode(0);
-    	
-    	ListNode temp = head;
-    	ListNode ptr = list;
-
-    	
-    	int c =0;
-    	while(head!=null) {
-    		c++;
-    		head =head.next;
-    	}
-    	
-    	int t = c - n;
-    	
-    	if(t==0 && c==1)
-    		return null;
-    	
-    	while(temp!=null) {
-    		if(t==0) {
-    			ptr.next= temp.next;
-    			if(temp.next!=null)
-    				temp = temp.next;
-    			else 
+    		ListNode list = new ListNode(0);
+    		ListNode ptr = list;
+    		ListNode temp = head;
+    		ListNode main = head;
+    		
+    		while(temp!=null) {
+    			if(n!=0) {
+	    			temp = temp.next;
+	    			n--;
+    			}
+    			else {
     				break;
+    			}
+    		}
+    		ListNode t = temp;
+    		if(temp!=null) {
+	    		while(temp!=null && main!=null) {
+	    				ptr.next = new ListNode(main.val);
+	    				temp = temp.next;
+	    				main = main.next;
+	    				ptr = ptr.next;
+	    				if(temp==null&&main!=null) {
+	    					main = main.next;
+	    					temp = main;
+	    				}
+	    		}
     		}
     		else {
-    			
-	    		ptr.next = new ListNode(temp.val);
-	    		temp=temp.next;
-	    		ptr = ptr.next;
+    			return main.next;
     		}
-    		t--;
-    	}
-    	
+
     	
     	return list.next;
-        
+    	
+//    	ListNode list = new ListNode(0);
+//    	ListNode temp = head;
+//    	ListNode ptr = list;
+//    	int c =0;
+//    	while(head!=null) {
+//    		c++;
+//    		head =head.next;
+//    	}    	
+//    	int t = c - n;
+//    	if(t==0 && c==1)
+//    		return null;
+//    	while(temp!=null) {
+//    		if(t==0) {
+//    			ptr.next= temp.next;
+//    			if(temp.next!=null)
+//    				temp = temp.next;
+//    			else 
+//    				break;
+//    		}
+//    		else {
+//    			
+//	    		ptr.next = new ListNode(temp.val);
+//	    		temp=temp.next;
+//	    		ptr = ptr.next;
+//    		}
+//    		t--;
+//    	}
+//    	return list.next;
     }
 }
 
