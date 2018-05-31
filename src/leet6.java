@@ -6,8 +6,14 @@ import java.util.*;
 
 
 class Solution6 {
-    public String convert(String s, int numRows) {
-        
+    public String convert(String s, int n) {
+        int len = s.length();
+       
+        char[] a = new char[len];
+        for(int i =0;i<len;i++) {
+        		a[i] = s.charAt(i);
+        		
+        }
     	
     	
     	return "";
