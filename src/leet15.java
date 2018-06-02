@@ -5,10 +5,39 @@ import java.io.*;
 import java.util.*;
 
 class Solution15 {
-    public List<List<Integer>> threeSum(int[] nums) {
-    		
-    	List<List<Integer>> list = new ArrayList<List<Integer>>();
+    public List<List<Integer>> threeSum(int[] a) {
+    		boolean flag = false;
+    		int n =a.length;
+    		List<List<Integer>> list = new ArrayList<List<Integer>>();
+    		HashSet tab = new HashSet();
+    		for(int i =0;i<n-2;i++) {
+    			for(int j = i+1;j<n-1;j++) {
+    				int x =(a[i]+a[j])*-1;
+    				if(tab.contains(x)){
+    					List<Integer> newList = new ArrayList<Integer>();
+    					newList.add(a[i]);
+    					newList.add(a[j]);
+    					newList.add((a[i]+a[j])*-1);
+    					Collections.sort(newList);
+    					for(List item : list) {
+    						if(newList.equals(item)) {
+    							flag =true;
+    						}
+    					}
+    					if(!flag)
+    						list.add(newList);
+    					flag = false;
+    				}
+    				else {
+						tab.add(a[j]);
+					}
+    			}
+    		}
     	
+    	
+    	return list;
+    	//Bruteforce
+    	/*List<List<Integer>> list = new ArrayList<List<Integer>>();	
     	boolean flag = false;
     	int n = nums.length;
     	for(int i =0;i<n-2;i++)
@@ -34,9 +63,7 @@ class Solution15 {
     			}
     		}
     	}
-    		
-    	
-    	return list;
+    	return list; */
     }
 }
 
