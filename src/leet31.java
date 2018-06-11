@@ -8,20 +8,20 @@ class Solution31 {
     public void nextPermutation(int[] nums) {
         
         int i =nums.length-2;
-        while(i>=0){
-            if(nums[i]<=nums[i+1]){
-                break;
-            }
+        while(i>=0 && nums[i+1] <= nums[i]){
+//            if(nums[i]<=nums[i+1]){
+//                break;
+//            }
             i--;
         }
         System.out.println(i);
         if(i>=0){
         int j = nums.length -1;
             System.out.println(j);
-        while(j>=0){   
-            if(nums[j]>nums[i])
-                break;
-            
+        while(j>=0 && nums[j] <= nums[i]){   
+//            if(nums[j]>nums[i])
+//                break;
+//            
             j--;
            
         }
