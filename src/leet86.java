@@ -7,7 +7,35 @@ import java.util.*;
 class Solution86 {
     public ListNode partition(ListNode head, int x) {
         
-    	return null;
+    		ListNode temp1 = new ListNode(0);
+    		ListNode temp2 = new ListNode(0);
+    		ListNode ptr1 = temp1;
+    		ListNode ptr2 = temp2;
+    		
+    		ListNode ptr = head;
+    		
+    		while(ptr!=null) {
+    			if(ptr.val<x) {
+    				ptr1.next = new ListNode(ptr.val);
+    				ptr = ptr.next;
+    				ptr1 = ptr1.next;
+    			}
+    			else {
+    				ptr2.next = new ListNode(ptr.val);
+    				ptr = ptr.next;
+    				ptr2 = ptr2.next;
+    		
+    			}
+    		}
+    		temp2=temp2.next;
+    		ptr2 = temp2;
+    		while(ptr2!=null) {
+    			ptr1.next = new ListNode(ptr2.val);
+    			ptr1 = ptr1.next;
+    			ptr2 = ptr2.next;
+    		}
+    		
+    	return temp1.next;
     }
 }
 
