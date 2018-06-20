@@ -9,6 +9,7 @@ class Solution763 {
     	
     		int max =0;
     		int t =0;
+    		int sum =0;
     		Map<Character, Integer> map = new HashMap<Character, Integer>();
     		for(int i =0;i<S.length();i++) {
     			map.put(S.charAt(i),i);
@@ -23,18 +24,22 @@ class Solution763 {
 	    					max = map.get(S.charAt(i));
 	    				}
 	    				else {
+	    					for(int k : list) {
+	    						sum+=k;
+	    					}
+	    					
 	    					if(t==0)
 	    						list.add(i);
 	    					else
-	    						list.add(i - list.get(t-1));
+	    						list.add(i - sum);
 	    					max = map.get(S.charAt(i));
 	    					t++;
 	    				}
 	    				
 	    			}
-    			
+    			sum =0;
     		}
-    		int sum =0;
+//    		sum =0;
     		 for (int i: list) {
     		        sum += i;
     		    }
