@@ -7,7 +7,27 @@ import java.util.*;
 class Solution82 {
     public ListNode deleteDuplicates(ListNode head) {
     	
-    	return null;
+    		ListNode ptr = head;
+    		ListNode temp = new ListNode(0);
+    		ListNode ptr1 = temp;
+    		
+    		while(ptr!=null) {
+    			if(ptr.next!=null && ptr.val == ptr.next.val) {
+					ptr = ptr.next;
+					System.out.println(ptr.val);
+					System.out.println(ptr.next.val);
+    					while(ptr.next!=null && ptr.val==ptr.next.val)
+    						ptr = ptr.next;
+    					ptr = ptr.next;
+    			}
+    			else {
+    				ptr1.next = new ListNode(ptr.val);
+    				ptr = ptr.next;
+    				ptr1 = ptr1.next;
+    			}
+    		}
+    	
+    	return temp.next;
         
     }
 }
