@@ -11,6 +11,8 @@ class Solution43 {
     		for(int i = num1.length()-1;i>=0;i--) {
     			for(int j =num2.length()-1;j>=0;j--) {
     				
+    				
+    				
     			}
     		}
     	
