@@ -6,8 +6,33 @@ import java.util.*;
 
 class Solution24 {
     public ListNode swapPairs(ListNode head) {
+    	
+    	if(head == null)
+             return head;
+    	 
+    		ListNode dummy = new ListNode(0);
+        dummy.next = head;
+       
         
-    	return null;
+    	
+    		ListNode ptr = dummy;
+    		ListNode temp = head;
+    		
+    		while(ptr.next!=null && ptr.next.next!=null) {
+    			
+    			ListNode first = ptr.next;
+    	        ListNode second = ptr.next.next;
+    	        
+    	        first.next = second.next;
+    	        ptr.next = second;
+    	        
+    	        ptr.next.next = first;
+    	        ptr = ptr.next.next;
+    	        
+    			
+    		}
+        
+    	return dummy.next;
     }
 }
 
