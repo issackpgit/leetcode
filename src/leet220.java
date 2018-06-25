@@ -7,7 +7,14 @@ import java.util.*;
 class Solution220 {
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
         
+    	Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+    	int min = Integer.MAX_VALUE;
+    	int flag = 0;
     	
+    	for(int i =0;i<nums.length;i++) {
+    		
+    	}
+    		
     		return false;
     }
 }
