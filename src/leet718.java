@@ -6,8 +6,20 @@ import java.util.*;
 
 class Solution718 {
     public int findLength(int[] A, int[] B) {
-       
-    	return 0;
+    	
+    		int dp[][] = new int[A.length+1][B.length+1];
+    		int ans = 0;
+    		
+    		for(int i = A.length -1; i>=0;i--) {
+    			for(int j = A.length -1; j>=0;j--) {
+    				if(A[i]==B[j]) {
+    					dp[i][j] = dp[i+1][j+1]+1;
+    					ans = Math.max(ans, dp[i][j]);
+    				}
+    			}
+    		}
+    	
+    	return ans;
     }
 }
 
