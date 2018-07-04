@@ -21,7 +21,6 @@ class Solution5 {
     					ans = s.substring(i, j+1);
     				}
     			}
-    			
     		}
     	
     	return ans;
