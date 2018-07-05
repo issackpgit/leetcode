@@ -7,7 +7,15 @@ import java.util.*;
 class Solution746 {
     public int minCostClimbingStairs(int[] cost) {
     	
-    	return 0;
+    	int f1=0, f2=0;
+    	
+    	for(int i =0;i<cost.length;i++) {
+    		int f0 = cost[i] + Math.min(f1, f2); 
+   		f2=f1;
+   		f1=f0;
+    	}
+    	
+    	return Math.min(f1, f2);
         
     }
 }
