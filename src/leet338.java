@@ -7,8 +7,19 @@ import java.util.*;
 
 class Solution338 {
     public int[] countBits(int num) {
+    	
+	int j =1;
+    	
+    	int f[] = new int[num+1];
+    
+    	for(int i =1;i<=num;i++) {
+    		if(j*2 == i) {
+    			j=j*2;
+    		}
+    		f[i]= f[i-j] +1;
+    	}
         
-    	return null;
+    	return f;
     }
 }
 
