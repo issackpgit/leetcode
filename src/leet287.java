@@ -6,8 +6,15 @@ import java.util.*;
 
 class Solution287 {
     public int findDuplicate(int[] nums) {
-        
-    	return 0;
+    	Set<Integer> seen = new HashSet<Integer>();
+        for (int num : nums) {
+            if (seen.contains(num)) {
+                return num;
+            }
+            seen.add(num);
+        }
+
+        return -1;
     }
 }
 
