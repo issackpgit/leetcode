@@ -6,8 +6,22 @@ import java.util.*;
 
 class Solution647 {
     public int countSubstrings(String s) {
+    	
+    	int n = s.length();
+    	int ans =0;
+    	
+    	for(int c = 0;c <2*n-1;c++) {
+    		int left = c/2;
+    		int right = left +c%2;
+    		while(left>=0 && right < n && s.charAt(left)==s.charAt(right)) {
+    			ans++;
+    			left--;
+    			right++;
+    			
+    		}
+    	}
         
-    	return 0;
+    	return ans;
     }
 }
 
