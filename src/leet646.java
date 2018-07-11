@@ -6,42 +6,27 @@ import java.util.*;
 
 class Solution646 {
     public int findLongestChain(int[][] pairs) {
-       Arrays.sort(pairs,new Comparator<int[]>() {
-           
-          @Override             
-          // Compare values according to columns
-          public int compare(final int[] entry1, 
-                             final int[] entry2) {
- 
-            // To sort in descending order revert 
-            // the '>' Operator
-            if (entry1[0] > entry2[0])
-                return 1;
-            else
-                return -1;
-          }
-        });
-       
-       int N = pairs.length;
-       int[] dp = new int[N];
-       Arrays.fill(dp, 1);
-       
-       for(int i =1;i<N;i++) {
-    	   	for(int j =0;j<i;j++) {
-           if (pairs[j][1] < pairs[i][0]) {
-                	dp[i] = Math.max(dp[i], dp[i]+1);
-           }
-    	   	}
-       }
-       int ans =0;
+    	Arrays.sort(pairs, (a, b) -> (a[0] - b[0]));
+        
+        int N = pairs.length;
+        int[] dp = new int[N];
+        Arrays.fill(dp, 1);
+        
+        for(int i =1;i<N;i++) {
+     	   	for(int j =0;j<i;j++) {
+            if (pairs[j][1] < pairs[i][0]) {
+                 	dp[i] = Math.max(dp[i], dp[i]+1);
+            }
+     	   	}
+        }
+        int ans =0;
 
-       for(int x:dp) {
-    	   	if(x>ans) ans =x;
-       }
-       
-       
-    	return ans;
-    }
+        for(int x:dp) {
+     	   	if(x>ans) ans =x;
+        }
+        
+        
+     	return ans;    }
 }
 
 public class leet646 {
@@ -78,8 +63,8 @@ public class leet646 {
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         String line;
-        int[][] pairs = new int[3][3];
-        for(int i =0;i<3;i++) {
+        int[][] pairs = new int[8][2];
+        for(int i =0;i<8;i++) {
 	        	for(int j =0;j<2;j++) {
 	        		pairs[i][j] = Integer.parseInt(in.readLine());
 	        	}
