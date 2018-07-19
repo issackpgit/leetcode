@@ -16,7 +16,7 @@ public class leet535 {
         return String.valueOf(urls.size()-1);
     }
 
-    public String decode(String shortUrl) {
+    public static String decode(String shortUrl) {
         int index = Integer.valueOf(shortUrl);
         return (index<urls.size())?urls.get(index):"";
     }
@@ -28,6 +28,7 @@ public class leet535 {
         line1 = in.readLine();
         
         System.out.println(encode(line));
+        System.out.println(decode(line1));
 
     }
     
