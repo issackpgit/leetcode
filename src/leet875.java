@@ -5,9 +5,27 @@ import java.io.*;
 import java.util.*;
 
 class Solution875 {
-    public int minEatingSpeed(int[] piles, int H) {
+    public int minEatingSpeed(int[] arr, int H) {
+    	
+    		int i;
+        int max = arr[0];
+        for (i = 1; i < arr.length; i++)
+            if (arr[i] > max)
+                max = arr[i];
+                
+       int low =0;
+    		  
+    		   while(low<max) {
+    			   int c =0;
+    			   int x = (low+max)/2;
+    			   for(int p :arr) {
+    				   c+= Math.ceil((double)p/x);
+    			   }
+    			   if(c>H) low = x+1;
+    			   else max = x;
+    		   }
         
-    	return 0;
+    	return low;
     }
 }
 
