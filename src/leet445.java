@@ -7,7 +7,38 @@ import java.util.*;
 class Solution445 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         
-    	return null;
+    	     Stack<Integer> s1 = new Stack<Integer>();
+         Stack<Integer> s2 = new Stack<Integer>();
+         
+         while(l1 != null) {
+             s1.push(l1.val);
+             l1 = l1.next;
+         };
+         while(l2 != null) {
+             s2.push(l2.val);
+             l2 = l2.next;
+         }
+         
+         ListNode list = new ListNode(0);
+         while(!s1.isEmpty()||!s2.isEmpty()) {
+        	 	int sum = list.val;
+        	 	if(!s1.isEmpty()) sum+=s1.pop();
+        	 	if(!s2.isEmpty()) sum+=s2.pop();
+        	 	
+        	 	if(sum>9) {
+        	 		list.val = sum%10;
+        	 	}else {
+        	 		list.val=sum;
+        	 	}
+        	 	ListNode head = new ListNode(sum/10);
+        	 	head.next = list;
+        	 	list=head;
+        	 
+         }
+         
+         if(list.val==0) return list.next;
+         else 
+        	 	return list;
     }
 }
 
