@@ -3,8 +3,11 @@ import java.util.*;
 public class checkStrings {
 
 	public static void main(String args[]) {
-		String s1= "hello123";
-		String s2= "hello123";
+		String s1= "hello  123 ";
+		String s2= "hello  123 ";
+		
+		char a[] = s1.toCharArray();
+		
 		System.out.println(checkString(s1,s2));
 	}
 	
