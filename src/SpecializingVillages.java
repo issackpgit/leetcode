@@ -46,6 +46,7 @@ public static void main(String[] args) {
     		
 //    		int noOfCC = 
     		
+    		
     } 
    }
 
@@ -70,7 +71,6 @@ private static void dfs(int v,int root) {
 		if(graph[v][p] && marked[p]!=1)
 		{
 			dfs(p,root);
-//			cc[p]=c;
 		}
 	}
 }
