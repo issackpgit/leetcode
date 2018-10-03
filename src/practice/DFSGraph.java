@@ -3,14 +3,14 @@ package practice;
 import java.util.LinkedList;
 
 
-public class graph{
+public class DFSGraph{
 
 //	public class Graph{
 	
 			int V; 
 	        LinkedList<Integer> adjListArray[];		
 	
-	        graph(int V) 
+	        DFSGraph(int V) 
 	        { 
 	            this.V = V;
 	            adjListArray = new LinkedList[V]; 
@@ -29,7 +29,7 @@ public class graph{
 	
 	 public static void main(String args[]) 
 	    { 
-	        graph g = new graph(4); 
+	        DFSGraph g = new DFSGraph(4); 
 	        
 	        g.addEdge(0, 1); 
 	        g.addEdge(0, 2); 
