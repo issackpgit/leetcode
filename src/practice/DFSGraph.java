@@ -4,8 +4,6 @@ import java.util.LinkedList;
 
 
 public class DFSGraph{
-
-//	public class Graph{
 	
 			int V; 
 	        LinkedList<Integer> adjListArray[];		
