@@ -1,12 +1,14 @@
 package practice;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
+import practice.Graph.Edge;
+
 public class Kruskal {
 	
-	
-	public class Edge {
-		int start,end,weight;
-		
-	}
+	DisjointSet d = new DisjointSet();
 	
 	public static void main(String args[]) {
 		Graph graph = new Graph(4,5);
@@ -38,15 +40,27 @@ public class Kruskal {
         graph.edge[4].e = 3; 
         graph.edge[4].weight = 4; 
         
+        Arrays.sort(graph.edge);
+        
         k.findKruskal(graph);
 		
 	}
 
-	private void findKruskal(Graph graph) {
+	private void findKruskal(Graph g) {
 		
+		for(int i =0 ; i<g.V;i++) {
+			d.makeSet(i);
+		}
+		
+		ArrayList result = new ArrayList();
+		for(Edge ed: g.edge) {
+			if(d.findSet(ed.v)!=d.findSet(ed.e)) {
+				d.union(ed.v, ed.e);
+				result.add(ed);
+			}
+			
+		}
 	}
-	
-	
 	
 
 }

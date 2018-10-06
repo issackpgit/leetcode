@@ -1,12 +1,15 @@
 package practice;
 
-import java.util.LinkedList;
+import java.util.*;
 
 public class Graph {
 	int V;
 	LinkedList adj[];
 	
-	Graph(int V){
+	Map<Edge, Integer> edges = new HashMap<Edge, Integer>();
+	
+	Graph(int v){
+		V=v;
 		adj = new LinkedList[V];
 		
 		for(int i =0;i<V;i++) {
@@ -16,7 +19,9 @@ public class Graph {
 	
 	int E;
 	Edge edge[];
-	Graph(int V, int E){
+	Graph(int v, int e){
+		V=v;
+		E=e;
 		edge = new Edge[E];
 		
 		for(int i = 0 ;i<E;i++) {
@@ -27,6 +32,12 @@ public class Graph {
 	
 	public void addEdge(int v,int w) {
 		adj[v].add(w);
+		Edge ed = new Edge();
+		ed.v = v;
+		ed.e = w;
+		ed.weight = 0;
+		edges.put(ed, ed.weight);
+		
 	}
 	
 	public LinkedList getAdj(int v) {
