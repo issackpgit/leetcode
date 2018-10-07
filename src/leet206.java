@@ -6,19 +6,21 @@ import java.io.*;
 class Solution206 {
     public ListNode reverseList(ListNode head) {
     	
-    	if(head == null||head.next==null) return head;
-        
-    	ListNode temp = null;
-    	ListNode ptr = head;
+    	if(head==null) return null;
     	
-    	while(ptr!=null) {
-    		ListNode rev = new ListNode(ptr.val);
-    		rev.next = temp;
-    		temp = rev;
-    		ptr = ptr.next;
+    	ListNode temp = head;
+    	ListNode next = null;
+    	ListNode prev = null;
+    	while(temp!=null) {
+    		next = temp.next;
+    		temp.next = prev;
+    		prev = temp;
+    		temp = next;    		
     	}
     	
-    	return temp;
+    	head = prev;
+    	
+    	return head;
     }
 }
 

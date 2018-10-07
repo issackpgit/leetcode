@@ -38,8 +38,8 @@ public class BFS {
             while(it.hasNext()) {
             	 int v = it.next();
             	 if(!visited[v]) {
-            	 visited[v]=true;
-            	 queue.add(v);
+	            	 visited[v]=true;
+	            	 queue.add(v);
             }
             }
    
