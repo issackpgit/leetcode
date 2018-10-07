@@ -30,12 +30,16 @@ public class Graph {
 		
 	}
 	
-	public void addEdge(int v,int w) {
+	public void addEdge(int v, int w) {
 		adj[v].add(w);
+	}
+	
+	public void addEdge(int v,int w, int weight) {
+//		adj[v].add(w);
 		Edge ed = new Edge();
 		ed.v = v;
 		ed.e = w;
-		ed.weight = 0;
+		ed.weight = weight;
 		edges.put(ed, ed.weight);
 		
 	}
