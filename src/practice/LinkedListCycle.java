@@ -15,10 +15,10 @@ public class LinkedListCycle {
 		
 		node1.next = node2;
 		node2.next = node3;
-		node3.next = node4;
-		node4.next = node5;
-		node5.next = node6;
-		node6.next = node5;
+//		node3.next = node4;
+//		node4.next = node5;
+//		node5.next = node6;
+//		node6.next = node5;
 		
 		
 		ListNode head = node1;
@@ -37,17 +37,17 @@ public class LinkedListCycle {
 		ListNode fast = head.next;
 		ListNode slow = head;
 		ListNode start = head;
-		boolean flag = true;
+		boolean flag = false;
 		
 		
-		while(fast!=slow)
+		while(fast!=null && slow!=null)
 		{
-			if(fast==null && slow!= null && fast.next==null)
-				{
-				flag = false;
-				}
+			if(fast==slow) {
+				flag = true;
+			}
 			fast = fast.next.next;
 			slow = slow.next;
+			
 			
 		}
 		
