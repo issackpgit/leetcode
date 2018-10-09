@@ -1,5 +1,6 @@
 package practice;
 
+import java.util.*;
 
 class Node{
 	int data;
@@ -13,9 +14,18 @@ class Node{
 }
 
 public class DepthofTree {
+	
+	Stack stack = new Stack();
+	
+	LinkedList q = new LinkedList<>();
+	
+	
+	
 
 	public static void main(String args[]) {
 		DepthofTree d = new DepthofTree();
+		
+		
 		
 		Node root = new Node(1);
 		root.left = new Node(2);
