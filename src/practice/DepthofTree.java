@@ -15,10 +15,10 @@ class Node{
 
 public class DepthofTree {
 	
-	Stack stack = new Stack();
+//	Stack stack = new Stack();
 	
-	LinkedList q = new LinkedList<>();
-	
+//	LinkedList q = new LinkedList<>();
+//	q.add(1);
 	
 	
 
