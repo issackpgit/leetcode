@@ -21,7 +21,7 @@ public class Dijikstras {
 
 	private void findShortest(GraphNew g) {
 		int key[] = new int[g.V];
-		int dist[] = new int[g.V];
+//		int dist[] = new int[g.V];
 		int parent[] = new int[g.V];
 		boolean sp[] = new boolean[g.V];
 		
@@ -35,20 +35,37 @@ public class Dijikstras {
 		for(int i =0;i<g.V;i++) {
 			int cur = findMin(key, sp);
 			sp[cur] = true;
-			dist[cur] = key[cur];
+//			dist[cur] = key[cur];
 			
 			Iterator<GraphNew.Edge> it = g.getAdj(cur).iterator();
 			
 			while(it.hasNext()) {
 				GraphNew.Edge ed = it.next();
-				if((ed.weight+dist[cur])<key[ed.dest]) {
-					key[ed.dest] = ed.weight+dist[cur];
+				if((ed.weight+key[cur])<key[ed.dest]) {
+					key[ed.dest] = ed.weight+key[cur];
 					parent[ed.dest] = cur;
 				}
 			}
 			
 		}
 		System.out.println("parent");
+		
+		for(int i =0;i<parent.length;i++) {
+			int p =parent[i];
+			System.out.print(i+"==>"+p);
+			if(p==-1) {
+				System.out.println("");
+				continue;
+			}
+			else {
+				while(p!=-1) {
+					p = parent[p];
+					System.out.print("-->"+p);
+				}
+			System.out.println("");
+			}
+			
+		}
 	
 	}
 
