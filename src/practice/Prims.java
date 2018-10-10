@@ -10,7 +10,7 @@ public class Prims {
 	public static void main(String args[]) {
 		Prims p = new Prims();
 		p.V = 5;
-		Graph g = new Graph(p.V,7);
+		GraphNew g = new GraphNew(p.V,false);
 		
 		g.addEdge(0, 1, 2);
 		g.addEdge(1, 2, 3);
@@ -23,7 +23,7 @@ public class Prims {
 		p.findMST(g);
 	}
 	
-	private void findMST(Graph g) {
+	private void findMST(GraphNew g) {
 		int key[] = new int[V];
 		int parent[] = new int[V];
 		boolean mst[] = new boolean[V];
@@ -39,16 +39,21 @@ public class Prims {
 			int min = findMin(mst,key);
 			mst[min] = true;
 			
-			Iterator<Integer> it = g.getAdj(min).iterator();
+			Iterator<practice.GraphNew.Edge> it = g.getAdj(min).iterator();
 			while(it.hasNext()) {
-				int p = it.next();
-				Graph.Edge e = g.new Edge(min,p);
-				if(g.edges.get(e)<key[min]) {
-					key[min] = g.edges.get(e);
-					parent[p] = min; 
-				}				
+				GraphNew.Edge e = it.next();
+				if(e.weight<key[e.dest]) {
+					key[e.dest] = e.weight;
+					parent[e.dest] = min;
+				}
+//				if(g.edges.get(e)<key[min]) {
+//					key[min] = g.edges.get(e);
+//					parent[p] = min; 
+//				}				
 			}
 		}
+		System.out.println(parent);
+
 		
 	
 	}
@@ -58,7 +63,7 @@ public class Prims {
 		
 		for(int i =0;i<key.length;i++) {
 			if(key[i]<min && !mst[i]) {
-				min = key[i];
+				min = i;
 			}
 		}
 		
