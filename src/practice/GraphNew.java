@@ -27,7 +27,8 @@ public class GraphNew {
 		}
 		else {
 			adj[src].add(e);
-			adj[dest].add(e);
+			Edge e1 = new Edge(dest, src, weight);
+			adj[dest].add(e1);
 		}
 		
 	}

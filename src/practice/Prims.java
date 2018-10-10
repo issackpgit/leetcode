@@ -1,11 +1,9 @@
 package practice;
 
 import java.util.Iterator;
-import practice.Graph.Edge;
 
 public class Prims {
 	public int V;
-	private Edge ed;
 	
 	public static void main(String args[]) {
 		Prims p = new Prims();
@@ -45,28 +43,25 @@ public class Prims {
 				if(e.weight<key[e.dest]) {
 					key[e.dest] = e.weight;
 					parent[e.dest] = min;
-				}
-//				if(g.edges.get(e)<key[min]) {
-//					key[min] = g.edges.get(e);
-//					parent[p] = min; 
-//				}				
+				}			
 			}
 		}
-		System.out.println(parent);
-
-		
-	
+		for(int i =0;i<parent.length;i++){
+			System.out.println(i+"-->"+parent[i]);
+		}
 	}
 
 	private int findMin(boolean[] mst, int[] key) {
 		int min =Integer.MAX_VALUE;
+		int d = 0;
 		
 		for(int i =0;i<key.length;i++) {
 			if(key[i]<min && !mst[i]) {
-				min = i;
+				min = key[i];
+				d=i;
 			}
 		}
 		
-		return min;
+		return d;
 	}
 }
