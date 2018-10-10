@@ -22,6 +22,12 @@ public class Graph {
 	Graph(int v, int e){
 		V=v;
 		E=e;
+		adj = new LinkedList[V];
+		
+		for(int i =0;i<V;i++) {
+			adj[i] = new LinkedList();
+		}
+		
 		edge = new Edge[E];
 		
 		for(int i = 0 ;i<E;i++) {
@@ -35,12 +41,12 @@ public class Graph {
 	}
 	
 	public void addEdge(int v,int w, int weight) {
-//		adj[v].add(w);
-		Edge ed = new Edge();
-		ed.v = v;
-		ed.e = w;
-		ed.weight = weight;
-		edges.put(ed, ed.weight);
+		adj[v].add(w);
+		Edge ed = new Edge(v,w);
+//		ed.v = v;
+//		ed.e = w;
+////		ed.weight = weight;
+		edges.put(ed, weight);
 		
 	}
 	
@@ -50,6 +56,15 @@ public class Graph {
 	
 	public class Edge implements Comparable<Edge>{
 		int v,e, weight;
+		
+		public Edge() {
+			
+		}
+		
+		public Edge(int v, int e) {
+			this.v = v;
+			this.e = e;
+		}
 		
 		public int compareTo(Edge s) {
 			return this.weight-s.weight;	
