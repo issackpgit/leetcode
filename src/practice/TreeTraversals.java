@@ -41,7 +41,7 @@ public class TreeTraversals {
 		}
 	}
 
-	private void inorder(Node root) {
+	public void inorder(Node root) {
 		if(root == null)
 			return;
 		else {
