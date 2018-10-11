@@ -1,31 +1,9 @@
 package practice;
 
-import java.util.*;
-
-class Node{
-	int data;
-	Node left, right;
-	
-	public Node(int item) {
-		data = item;
-		left=null;
-		right = null;
-	}
-}
-
 public class DepthofTree {
-	
-//	Stack stack = new Stack();
-	
-//	LinkedList q = new LinkedList<>();
-//	q.add(1);
-	
-	
 
 	public static void main(String args[]) {
 		DepthofTree d = new DepthofTree();
-		
-		
 		
 		Node root = new Node(1);
 		root.left = new Node(2);
