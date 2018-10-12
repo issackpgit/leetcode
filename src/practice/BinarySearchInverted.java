@@ -8,7 +8,7 @@ public class BinarySearchInverted {
 		
 		int left = 0;
 		int right = a.length -1;
-		int n = b.search(a,left, right,5);
+		int n = b.search(a,left, right,30);
 		System.out.println(n);
 	}
 
