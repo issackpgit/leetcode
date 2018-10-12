@@ -1,7 +1,7 @@
 package practice;
 
 public class QuickSort {
-	public int[] a = {9,8,7,6,5,4,3,2,1};
+	public int[] a = {2,3,2,7,8,10,3,5,6,5,1,4};
 	
 	public static void main(String args[]) {
 		
