@@ -1,7 +1,7 @@
 package practice;
 
 public class QuickSort {
-	public int[] a = {2,4,3,1,6,5,8};
+	public int[] a = {9,8,7,6,5,4,3,2,1};
 	
 	public static void main(String args[]) {
 		
@@ -10,43 +10,36 @@ public class QuickSort {
 		int start = 0;
 		int end = q.a.length;
 		
-		q.sort(q.a,start,end);
+		q.sort(q.a,start,end-1);
 		
-		System.out.println(q.a);
+		
+		for(int i =0;i<q.a.length;i++)
+			System.out.println(q.a[i]);
 	}
 
 	private void sort(int[] a, int start, int end) {
 		if(start<end) {
 			int p = partition(a,start,end);
 			sort(a,start,p-1);
-			sort(a,p+1,end-1);
+			sort(a,p+1,end);
 		}
 	}
 
 	private int partition(int[] a, int start, int end) {
 			
-		int pivot = a[start];
+		int pivot = a[end];
+		int pIndex = start;
 		
-		int i =start;
-		int j = end;
-		
-		
-		while(i<j) {
-			do {
-				i++;
+		for(int i =pIndex;i<end;i++) {
+			if(a[i]<=pivot) {
+				swap(a,i,pIndex);
+				pIndex++;
 			}
-			while(a[i]<pivot);
-			
-			do {
-				j--;
-			}
-			while(a[j]>pivot);
-			
-			swap(a,i,j);
 		}
 		
-		swap(a,start,j);
-		return j;
+		swap(a,pIndex,end);
+		
+	return pIndex;
 	}
 
 	private void swap(int[] a, int i, int j) {
