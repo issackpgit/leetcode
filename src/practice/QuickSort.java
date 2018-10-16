@@ -25,20 +25,16 @@ public class QuickSort {
 		}
 	}
 
-	private int partition(int[] a, int start, int end) {
-			
+	private int partition(int[] a, int start, int end) {			
 		int pivot = a[end];
-		int pIndex = start;
-		
+		int pIndex = start;		
 		for(int i =pIndex;i<end;i++) {
 			if(a[i]<=pivot) {
 				swap(a,i,pIndex);
 				pIndex++;
 			}
-		}
-		
-		swap(a,pIndex,end);
-		
+		}		
+		swap(a,pIndex,end);		
 	return pIndex;
 	}
 
