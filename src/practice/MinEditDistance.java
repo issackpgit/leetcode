@@ -5,8 +5,8 @@ public class MinEditDistance {
 		
 		MinEditDistance l = new MinEditDistance();
 		
-		 String str1 = "abcdef";
-	     String str2 = "azced";		
+		 String str1 = "horse";
+	     String str2 = "ros";		
 	     
 	     int n = l.findMin(str1.toCharArray(),str2.toCharArray());
 	     System.out.println(n);
@@ -14,6 +14,14 @@ public class MinEditDistance {
 	
 	private int findMin(char[] s1, char[] s2) {
 		int A[][] = new int[s1.length+1][s2.length+1];
+		
+		for (int i=0;i<=A.length-1;i++){
+            A[i][0] =i; 
+        }
+        
+        for (int j=0;j<=A[0].length-1;j++){
+            A[0][j] = j;
+        }
 		
 		for(int i =1;i<A.length;i++) {
 			for(int j =1;j<A[i].length;j++) {
