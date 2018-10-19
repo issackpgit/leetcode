@@ -5,8 +5,8 @@ public class LongestCommonSubSeq {
 		
 		LongestCommonSubSeq l = new LongestCommonSubSeq();
 		
-		 String str1 = "ABCDGHLQR";
-	     String str2 = "AEDPHR";		
+		 String str1 = "sea";
+	     String str2 = "eat";		
 	     
 	     int n = l.findLcs(str1.toCharArray(),str2.toCharArray());
 	     System.out.println(n);
