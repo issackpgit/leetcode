@@ -19,7 +19,7 @@ public class RectangleHistogram {
 			if(s.isEmpty() || a[s.peek()]<=a[i]) {
 				s.push(i);
 			}
-			else //if(!s.isEmpty() && a[s.peek()]>a[i])
+			else
 				{
 				while(!s.isEmpty() && a[s.peek()]>a[i]) {
 					int top = s.pop();
