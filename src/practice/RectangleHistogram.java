@@ -3,7 +3,7 @@ package practice;
 public class RectangleHistogram {
 	public static void main(String args[]) {
 		RectangleHistogram r = new RectangleHistogram();
-		int a[] = {2,3,1,4,3,3};
+		int a[] = {1,1};
 		int n = r.findHist(a);
 		System.out.println(n);
 	}
@@ -19,7 +19,8 @@ public class RectangleHistogram {
 			if(s.isEmpty() || a[s.peek()]<=a[i]) {
 				s.push(i);
 			}
-			else if(!s.isEmpty() && a[s.peek()]>a[i]) {
+			else //if(!s.isEmpty() && a[s.peek()]>a[i])
+				{
 				while(!s.isEmpty() && a[s.peek()]>a[i]) {
 					int top = s.pop();
 					if(s.isEmpty()) {
