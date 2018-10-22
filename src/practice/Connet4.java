@@ -1,21 +1,10 @@
 package practice;
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
 import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-
-
-
 public class Connet4 {
-    // Complete the findGameStatus function below.
     static String findGameStatus(List<List<Character>> board) {
     	int rows = board.size();
         int cols = board.get(0).size();
@@ -24,13 +13,10 @@ public class Connet4 {
         for(int i =0;i<rows;i++){
             for(int j =0;j<cols;j++){
                 if(board.get(i).get(j)!='0'){
-//                    System.out.println(board.get(i).get(j));
                     flag = helper(board, i, j, rows, cols);
                     if(flag) {
-//                        System.out.println(board.get(i).get(j));
-                        		result.add(board.get(i).get(j));
+                        	result.add(board.get(i).get(j));
                     }
-                   
                 }
                 flag=false;
             }
@@ -41,7 +27,6 @@ public class Connet4 {
             return "N";
         else {
         		return Character.toString(result.iterator().next());
-
         }
     }
 
@@ -86,7 +71,7 @@ public class Connet4 {
 //        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
         int boardRows = Integer.parseInt(bufferedReader.readLine().trim());
-        int boardColumns = Integer.parseInt(bufferedReader.readLine().trim());
+//        int boardColumns = Integer.parseInt(bufferedReader.readLine().trim());
 
         List<List<Character>> board = new ArrayList<>();
 
@@ -107,7 +92,6 @@ public class Connet4 {
 
 //        bufferedWriter.write(res);
 //        bufferedWriter.newLine();
-
         bufferedReader.close();
 //        bufferedWriter.close();
     }
