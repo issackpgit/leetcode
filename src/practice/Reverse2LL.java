@@ -24,8 +24,7 @@ import java.io.InputStreamReader;
  */
 class Solution92 {
     ListNode tail = new ListNode(0);
-    public ListNode reverseBetween(ListNode head, int m, int n) {
-        
+    public ListNode reverseBetween(ListNode head, int m, int n) {   
     		
         if(head == null) return null;
         if(m==n) return head;
