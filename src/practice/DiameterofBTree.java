@@ -34,7 +34,6 @@ public class DiameterofBTree {
 			int ans = Math.max(d, Math.max(ldiameter, rdiameter));
 			return ans;
 		}
-		
 	}
 
 	private int height(Node root) {
