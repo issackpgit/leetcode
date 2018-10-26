@@ -20,9 +20,7 @@ public class PriorityQueu {
 		s.add("B");
 		s.add("D");
 		s.add("E");
-		
-//		print(s);
-//		p.print(i);
+
 		for(String item: s) {
 			System.out.println(item);
 		}
