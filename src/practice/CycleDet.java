@@ -39,6 +39,25 @@ public class CycleDet {
 		}
 	}
 
+	
+	 // colors: WHITE 0, GRAY 1, BLACK 2;
+    public boolean dfsarray(int node, int[] color, int[][] graph) {
+        if (color[node] > 0)
+            return color[node] == 2;
+
+        color[node] = 1;
+        for (int nei: graph[node]) {
+            if (color[node] == 2)
+                continue;
+            if (color[nei] == 1) return false;
+            
+            if(!dfsarray(nei, color, graph))
+                return false;
+        }
+
+        color[node] = 2;
+        return true;
+    }
 
 	private void dfs(int v, Graph g) {
 	
