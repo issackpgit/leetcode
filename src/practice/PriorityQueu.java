@@ -5,7 +5,7 @@ import java.util.*;
 public class PriorityQueu {
 
 	public static void main(String args[]) {
-		PriorityQueue<Integer> i = new PriorityQueue<>();
+		PriorityQueue<Integer> i = new PriorityQueue<>(1, Collections.reverseOrder());
 		PriorityQueue<String> s = new PriorityQueue<>();
 		PriorityQueu p =new PriorityQueu();
 		
@@ -15,13 +15,17 @@ public class PriorityQueu {
 		i.add(5);
 		i.add(3);
 		
+//		i.remove();
+		
+				
 		s.add("A");
 		s.add("C");
 		s.add("B");
 		s.add("D");
 		s.add("E");
+		
 
-		for(String item: s) {
+		for(int item: i) {
 			System.out.println(item);
 		}
 		
