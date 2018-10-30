@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.*;
 import static java.util.stream.Collectors.toList;
 
-public class Connet4 {
+public class Connet4Game {
     static String findGameStatus(List<List<Character>> board) {
     	int rows = board.size();
         int cols = board.get(0).size();
