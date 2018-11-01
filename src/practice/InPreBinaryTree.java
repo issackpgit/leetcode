@@ -61,7 +61,6 @@ class SolutionipT {
         
         int rinstart_ = index+1;
         int rinend_ = inend;
-        int rinlength_ = rinend_-rinstart_+1;
         
         int rprestart_ = prestart+linlength+1;
         int rpreend_ = preend;
