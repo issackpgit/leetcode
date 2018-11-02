@@ -7,7 +7,7 @@ public class LinkedListPaliandrome {
 		
 		ListNode node = new ListNode(0);
 		ListNode ptr = node;
-		int arr[] = {1,2,3,4,4,3,2,1};
+		int arr[] = {1,2,3,4,3,2,1};
 		for(int i =0;i<arr.length;i++) {
 			ptr.next = new ListNode(arr[i]);
 			ptr = ptr.next;
