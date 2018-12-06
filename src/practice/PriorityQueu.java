@@ -5,7 +5,7 @@ import java.util.*;
 public class PriorityQueu {
 
 	public static void main(String args[]) {
-		PriorityQueue<Integer> i = new PriorityQueue<>(1, Collections.reverseOrder());
+		PriorityQueue<Integer> i = new PriorityQueue<>(1);
 		PriorityQueue<String> s = new PriorityQueue<>();
 		PriorityQueu p =new PriorityQueu();
 		
